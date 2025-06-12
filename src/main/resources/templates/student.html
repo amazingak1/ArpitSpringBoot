@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .form-container {
+            margin-top: 50px;
+            max-width: 500px;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-container mx-auto">
+        <h2>Student Form</h2>
+        <form th:action="@{/students/save}" th:object="${student}" method="post">
+            <div class="form-group">
+               
+                <input type="hidden" th:field="*{id}" id="id" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" th:field="*{name}" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact</label>
+                <input type="text" th:field="*{contact}" id="contact" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Course</label>
+                <input type="text" th:field="*{course}" id="course" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Save Student</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

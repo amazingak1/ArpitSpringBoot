@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Information</h1>
+   Name : <h2 th:text="${student.name}"> Name </h2>
+   Contact :  <h2 th:text="${student.contact}">contact</h2>
+   Course : <h2 th:text="${student.course}">course</h2>
+<div th:object="${student}">
+    <h1>Student Information by Selection expresion</h1>
+        Name : <h2 th:text="*{name}"> Name </h2>
+        Contact :  <h2 th:text="*{contact}">contact</h2>
+        Course : <h2 th:text="*{course}">course</h2>
+</div>
+</body>
+</html>
