@@ -11,13 +11,13 @@ public class FirstRestController {
 
 	@RequestMapping("/hello")
 	public String hello() {
-		return "Hello Rahul";
+		return "Hello Arpit";
 	}
 	
 
 	@RequestMapping("/student")
 	public Student getStudent() {
-		return new Student(101,"Rahul Dixit","AI 2A","9015088066");
+		return new Student(101,"Arpit Kumar","AI 2A","123456");
 	}
 	
 }
